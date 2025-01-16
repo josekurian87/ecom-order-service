@@ -1,4 +1,4 @@
-package com.secor.ecomcustomerservice;
+package com.secor.ecomorderservice;
 
 import org.springframework.boot.test.context.SpringBootTest;
 
