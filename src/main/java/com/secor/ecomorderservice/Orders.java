@@ -15,13 +15,12 @@ public class Orders {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long orderId;
 
+    private Long productId;
+    private Integer quantity;
     private Long customerId;
     private LocalDateTime orderDate;
     private String status;
     private BigDecimal totalAmount;
-
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
-    private List<OrderItems> orderItems;
 
     // Getters and Setters
 }

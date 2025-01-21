@@ -23,9 +23,5 @@ public class OrderItems {
     @JoinColumn(name = "orderId", insertable = false, updatable = false)
     private Orders order;
 
-    @ManyToOne
-    @JoinColumn(name = "productId", insertable = false, updatable = false)
-    private ProductCatalog product;
-
     // Getters and Setters
 }

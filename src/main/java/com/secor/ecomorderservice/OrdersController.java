@@ -21,6 +21,11 @@ public class OrdersController {
         return ordersRepository.findAll();
     }
 
+    @GetMapping("/{orderId}")
+    public Orders getOrderForOrderId(@PathVariable Long orderId) {
+        return ordersRepository.findByOrderId(orderId);
+    }
+
     @PostMapping
     public Orders addOrder(@RequestBody Orders order) {
         return ordersRepository.save(order);
@@ -29,6 +34,7 @@ public class OrdersController {
     @PutMapping("/{id}")
     public Orders updateOrder(@PathVariable Long id, @RequestBody Orders orderDetails) {
         Orders order = ordersRepository.findById(id).orElseThrow();
+        order.setProductId(orderDetails.getProductId());
         order.setCustomerId(orderDetails.getCustomerId());
         order.setOrderDate(orderDetails.getOrderDate());
         order.setStatus(orderDetails.getStatus());
